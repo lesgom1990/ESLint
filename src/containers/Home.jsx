@@ -11,13 +11,12 @@ import useInitialState from '../hooks/useInitialState.js'
 
 const API = 'http://localhost:3000/initialState';
 
-const App = () => {
+const Home = () => {
 
     const initialState = useInitialState(API);
 
     return (
-        <div className="App">
-            <Header />
+        <>
             <Search />
             {initialState.mylist?.length > 0 &&
                 <Categories title='mi lista'>
@@ -40,10 +39,8 @@ const App = () => {
                 {initialState.originals?.map((item) => <CarouselItem key={item.id} {...item} />)}
                 </Carousel>
             </Categories>
-
-            <Footer />
-        </div>
+        </>
     );
 };
 
-export default App;
+export default Home;
