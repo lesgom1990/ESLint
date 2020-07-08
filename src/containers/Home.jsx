@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import Header from '../components/Header.jsx';
 import '../components/Search'
 import '../assets/styles/App.scss';
 import Categories from '../components/Categories';
@@ -11,6 +12,7 @@ const Home = ({ myList, trends, originals }) => {
 
     return (
         <>
+            <Header />
             <Search />
             {myList.length > 0 &&
                 <Categories title='mi lista'>
